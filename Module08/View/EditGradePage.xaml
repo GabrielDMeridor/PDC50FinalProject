@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Module08.View.EditGradePage"
+             BackgroundColor="White">
+    <!-- Set main page background to white -->
+
+    <ScrollView Padding="20">
+        <VerticalStackLayout Spacing="15">
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Start">
+                <!-- Teacher's Image -->
+                <Image Source="sirfer.png"
+           Aspect="AspectFit"
+           HeightRequest="120"
+           WidthRequest="120"
+           VerticalOptions="Center" />
+
+                <!-- Teacher's Name (SirFer) -->
+                <Label Text="SirFer"
+           FontSize="48"
+           FontAttributes="Bold"
+           TextColor="Red"
+           VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <!-- Line Divider -->
+            <BoxView HeightRequest="2" BackgroundColor="Gray" Margin="0,10" />
+            <Label Text="Edit Grade"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#B71C1C"/>
+            <!-- Red color for label -->
+
+            <Label Text="Subject" FontAttributes="Bold" TextColor="#B71C1C"/>
+            <!-- Red color for label -->
+            <Entry Text="{Binding Subject}" Placeholder="Enter subject" BackgroundColor="LightGray" TextColor="Black"/>
+
+            <Label Text="Quarter" FontAttributes="Bold" TextColor="#B71C1C"/>
+            <!-- Red color for label -->
+            <Picker SelectedItem="{Binding Quarter}" BackgroundColor="LightGray" TextColor="Black">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>1st Quarter</x:String>
+                        <x:String>2nd Quarter</x:String>
+                        <x:String>3rd Quarter</x:String>
+                        <x:String>4th Quarter</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="Score" FontAttributes="Bold" TextColor="#B71C1C"/>
+            <!-- Red color for label -->
+            <Entry Text="{Binding Score}" Keyboard="Numeric" Placeholder="Enter score" BackgroundColor="LightGray" TextColor="Black"/>
+
+            <Label Text="School Year" FontAttributes="Bold" TextColor="#B71C1C"/>
+            <!-- Red color for label -->
+            <Entry Text="{Binding SchoolYear}" Placeholder="Enter school year" BackgroundColor="LightGray" TextColor="Black"/>
+
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Button Text="Update"
+                        Command="{Binding UpdateCommand}"
+                        BackgroundColor="#B71C1C" 
+                        TextColor="White"
+                            WidthRequest="100"
+                            CornerRadius="5"/>
+
+                    <Button Text="Cancel"
+                        Command="{Binding CancelCommand}"
+                        BackgroundColor="#E5E1DA" 
+                        TextColor="#1F1F1F"
+                            WidthRequest="100"
+                            CornerRadius="5"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

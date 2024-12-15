@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Module08.View.HomePage"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0" Spacing="25">
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Start">
+                <!-- Teacher's Image -->
+                <Image Source="sirfer.png"
+           Aspect="AspectFit"
+           HeightRequest="120"
+           WidthRequest="120"
+           VerticalOptions="Center" />
+
+                <!-- Teacher's Name (SirFer) -->
+                <Label Text="SirFer"
+           FontSize="48"
+           FontAttributes="Bold"
+           TextColor="Red"
+           VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <!-- Line Divider -->
+            <BoxView HeightRequest="2" BackgroundColor="Gray" Margin="0,10" />
+
+            <Image Source="login.png"
+                   Aspect="AspectFit"
+                   HeightRequest="150"
+                   HorizontalOptions="Center" />
+
+            <!-- Title -->
+            <Label
+                Text="Welcome to CCS StudentHub!"
+                FontSize="32"
+                FontAttributes="Bold"
+                TextColor="Red"
+                HorizontalOptions="Center" />
+
+            <!-- Add Database Connection Test -->
+            <Button
+                x:Name="TestDbBtn"
+                Text="Test Student Record Connection"
+                SemanticProperties.Hint="Tests the connection to the database"
+                Clicked="OnTestDbConnection"
+                BackgroundColor="#B71C1C"
+                TextColor="#FFFFFF"
+                HeightRequest="50"
+                HorizontalOptions="Fill" />
+
+            <!-- Connection Status Label -->
+            <Label
+                x:Name="ConnectionStatus"
+                FontSize="16"
+                TextColor="Red"
+                HorizontalOptions="Center" />
+
+            <!-- Student Page Navigation -->
+            <Button
+                Text="View Students List"
+                BackgroundColor="#B71C1C"
+                TextColor="#FFFFFF"
+                HeightRequest="50"
+                HorizontalOptions="Fill"
+                Clicked="ClickedViewStudent" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

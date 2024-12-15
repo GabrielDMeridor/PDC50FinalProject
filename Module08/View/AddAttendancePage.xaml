@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Module08.View.AddAttendancePage"
+             BackgroundColor="White">
+    <!-- Set main page background to white -->
+
+    <ScrollView Padding="20">
+        <VerticalStackLayout Spacing="15">
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Start">
+                <!-- Teacher's Image -->
+                <Image Source="sirfer.png"
+           Aspect="AspectFit"
+           HeightRequest="120"
+           WidthRequest="120"
+           VerticalOptions="Center" />
+
+                <!-- Teacher's Name (SirFer) -->
+                <Label Text="SirFer"
+           FontSize="48"
+           FontAttributes="Bold"
+           TextColor="Red"
+           VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <!-- Line Divider -->
+            <BoxView HeightRequest="2" BackgroundColor="Gray" Margin="0,10" />
+            <Label Text="Add Attendance"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#B71C1C"/>
+            <!-- Red color for label -->
+
+            <Label Text="Date" FontAttributes="Bold" TextColor="#B71C1C"/>
+            <!-- Red color for label -->
+            <DatePicker Date="{Binding Date}"
+                        Format="MM/dd/yyyy"
+                        BackgroundColor="#F1F1F1" TextColor="Black"/>
+
+            <Label Text="Select Status" FontAttributes="Bold" TextColor="#B71C1C"/>
+            <!-- Red color for label -->
+            <Picker SelectedItem="{Binding Status}" BackgroundColor="#F1F1F1" TextColor="Black">
+                <Picker.Items>
+                    <x:String>Present</x:String>
+                    <x:String>Absent</x:String>
+                    <x:String>Late</x:String>
+                    <x:String>Excused</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Remarks" FontAttributes="Bold" TextColor="#B71C1C"/>
+            <!-- Red color for label -->
+            <Entry Placeholder="Remarks" Text="{Binding Remarks}" HeightRequest="100" BackgroundColor="#F1F1F1" TextColor="Black"/>
+
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Button Text="Save"
+                        Command="{Binding SaveCommand}"
+                        BackgroundColor="#B71C1C" 
+                    TextColor="White"
+                            WidthRequest="100"
+                            CornerRadius="5"/>
+
+                    <Button Text="Cancel"
+                        Command="{Binding CancelCommand}"
+                        BackgroundColor="#E5E1DA" 
+                        TextColor="#1F1F1F"
+                        WidthRequest="100"
+                       CornerRadius="5"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
